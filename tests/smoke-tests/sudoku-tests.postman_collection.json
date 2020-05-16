@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "8dd8c9ce-bbcd-454a-84d4-f9bb4166d4d5",
+		"name": "sudoku-tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api/solve",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ba87d296-980e-41f5-859b-19de452dbe3a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"correct solution is returned\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"291738654\\r\\n653419278\\r\\n748625193\\r\\n429583716\\r\\n176942385\\r\\n385176429\\r\\n932861547\\r\\n814357962\\r\\n567294831\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/plain",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "090008604\n600019000\n048625000\n020080716\n070000080\n385070020\n000861540\n000350002\n507200030\n"
+				},
+				"url": {
+					"raw": "https://sudoku-solver-staging.azurewebsites.net/api/solve",
+					"protocol": "https",
+					"host": [
+						"sudoku-solver",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"solve"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

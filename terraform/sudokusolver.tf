@@ -1,3 +1,12 @@
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "VstsRG-malevy-6808"
+    storage_account_name = "vstsrgmalevy6808sa"
+    container_name       = "terraform-state"
+    key                  = "sudoku-solver-tf-state"
+  }
+}
+
 provider "azurerm" {
   version = "~>2.10.0"
   features {}

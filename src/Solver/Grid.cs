@@ -5,7 +5,7 @@ using Ardalis.GuardClauses;
 
 namespace sudokusolver.Solver
 {
-    public partial class Grid
+    public class Grid
     {
         private readonly GridCell[][] _cells;
 

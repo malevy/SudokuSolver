@@ -14,7 +14,7 @@ namespace sudokusolver.Solver
 
         public Grid Grid => _wrappedEnumerator.Grid;
 
-        public Grid.IGridCell Current => _wrappedEnumerator.Current;
+        public IGridCell Current => _wrappedEnumerator.Current;
 
         public bool MoveNext()
         {

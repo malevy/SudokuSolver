@@ -3,7 +3,7 @@
     public interface IGridEnumerator
     {
         Grid Grid { get; }
-        Grid.IGridCell Current { get; }
+        IGridCell Current { get; }
         bool MoveNext();
         bool MoveBack();
         void Reset();

@@ -1,0 +1,44 @@
+﻿openapi: 3.0.0
+info:
+  title: sudoku-solver.v1
+  version: '1.0'
+  license:
+    name: MIT
+    url: 'https://choosealicense.com/licenses/mit/'
+  contact:
+    name: Mike
+  description: 'A sample API for solving sudoku puzzles  '
+servers: []
+paths:
+  /api/solve:
+    post:
+      summary: solve the supplied sudoku puzzle
+      operationId: post-api-solve
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          content:
+            text/plain:
+              schema:
+                type: string
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+      description: solve the supplied puzzle
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: rd
+          description: 'the line delimiter used for the given puzzle. if a delimited is not provided, the solver will attempt to use CRLF and LF'
+      requestBody:
+        content:
+          text/plain:
+            schema:
+              type: string
+            examples: {}
+        description: a 9x9 matrix of integers (0-9). use zero (0) to identify the cells that must be solved for
+components:
+  schemas: {}

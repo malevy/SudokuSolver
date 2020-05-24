@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using sudokusolver.Converters;
@@ -10,7 +6,7 @@ using sudokusolver.Solver;
 
 namespace sudokusolver.Controllers
 {
-    [Route("api/solve")]
+    [Route("api")]
     [ApiController]
     public class SolverController : ControllerBase
     {
@@ -23,6 +19,7 @@ namespace sudokusolver.Controllers
         }
 
         [HttpPost]
+        [Route("solve")]
         [Consumes("text/plain")]
         public ActionResult<string> Post([FromBody] string body, [FromQuery(Name = "rd")] string rowdelimiter)
         {

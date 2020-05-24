@@ -5,7 +5,7 @@ namespace sudokusolver.Controllers
     [Route("swagger")]
     [Route("openapi")]
     [ApiController]
-    public class RootController : ControllerBase
+    public class OpenApiController : ControllerBase
     {
         /// <summary>
         /// return the OpenApi document
